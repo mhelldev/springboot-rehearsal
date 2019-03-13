@@ -13,8 +13,8 @@ public class RehearsalController {
         @GetMapping("/songs")
         public List<Song> songs() {
 		List<Song> songs = new ArrayList<>();
-		songs.add(new Song("Black Swan"));
-		songs.add(new Song("Home"));
+		songs.add(new Song("Black Swan", "A song about a black swan"));
+		songs.add(new Song("Home", "This song is about home"));
 
                 return songs;
         }
