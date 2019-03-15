@@ -1,14 +1,13 @@
 package com.example.rehearsal;
 
 import lombok.Data;
-import java.util.*;
 import lombok.AllArgsConstructor;
+import java.util.*;
 
 @Data
 @AllArgsConstructor
-public class Song {
+public class Part {
 	private String name;
-	private String description;
-	private List<Part> parts;
+	private String chords;
+	private int repeats;
 }
-

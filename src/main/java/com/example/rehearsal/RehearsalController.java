@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RehearsalController {
         @GetMapping("/songs")
         public List<Song> songs() {
+		List<Part> parts = new ArrayList<>();
+		Part part = new Part("chorus", "A Bm F", 2);
+		parts.add(part);
 		List<Song> songs = new ArrayList<>();
-		songs.add(new Song("Black Swan", "A song about a black swan"));
-		songs.add(new Song("Home", "This song is about home"));
+		songs.add(new Song("Black Swan", "A song about a black swan", parts));
+		songs.add(new Song("Home", "This song is about home", parts));
 
                 return songs;
         }
