@@ -21,6 +21,6 @@ public class RehearsalController {
 
 	@PostMapping("/songs") 
 	public void newSong(@RequestBody Song song) {
-		
+		songRepo.save(song);
 	}
 }

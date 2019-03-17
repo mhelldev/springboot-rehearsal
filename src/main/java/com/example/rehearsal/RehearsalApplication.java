@@ -23,6 +23,7 @@ public class RehearsalApplication {
 
 			Part part = new Part();
 			part.setName("Chorus");
+			part.setChords("Fm G Dm A7");
 			part.setRepeats(4);
 			part.setSong(song);
 
