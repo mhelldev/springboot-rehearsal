@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import java.util.*;
 import javax.persistence.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 
 @Data
 @Entity
@@ -19,4 +19,14 @@ public class Part {
 	@JoinColumn
 	@JsonIgnore
 	private Song song;
+
+	@JsonIgnore
+	public Song getSong() {
+		return this.song;
+	}
+	
+	@JsonProperty
+	public void setSong(Song song) {
+		this.song = song;
+	}
 }
