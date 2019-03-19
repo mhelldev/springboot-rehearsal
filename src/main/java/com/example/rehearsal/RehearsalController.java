@@ -15,8 +15,11 @@ public class RehearsalController {
 	private SongRepository songRepo;
 
         @GetMapping("/songs")
-        public Iterable<Song> songs() {
-		return songRepo.findAll();
+        public List<Song> songs() {
+		List<Song> songs = songRepo.findAll();
+		Collections.sort(songs, (Song s1, Song s2) 
+				-> s2.getId().compareTo(s1.getId()));
+		return songs;
         }
 
 	@PostMapping("/songs") 
