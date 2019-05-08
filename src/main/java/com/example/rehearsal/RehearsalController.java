@@ -4,7 +4,6 @@ import java.util.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 @RestController
 public class RehearsalController {
 
@@ -13,15 +12,14 @@ public class RehearsalController {
 	@Autowired
 	private PartRepository partRepo;
 
-        @GetMapping("/songs")
-        public List<Song> songs() {
+	@GetMapping("/songs")
+	public List<Song> songs() {
 		List<Song> songs = songRepo.findAll();
-		Collections.sort(songs, (Song s1, Song s2) 
-				-> s2.getId().compareTo(s1.getId()));
+		Collections.sort(songs, (Song s1, Song s2) -> s2.getId().compareTo(s1.getId()));
 		return songs;
-        }
+	}
 
-	@PostMapping("/songs") 
+	@PostMapping("/songs")
 	public void newSong(@RequestBody Song song) {
 		songRepo.save(song);
 	}
@@ -34,10 +32,15 @@ public class RehearsalController {
 	/*
 	 * curl localhost:8080/songs
 	 *
-	 * curl --header "Content-Type:application/json" --request POS         * T --data '{"name":"Home", "description":"a song about home"         * , "parts":[{"name":"chorus", "chords":"Am F", "repeats":2}]         * }' localhost:8080/songs
-         *
+	 * curl --header "Content-Type:application/json" --request POST --data
+	 * '{"name":"Home", "description":"a song about home" ,
+	 * "parts":[{"name":"chorus", "chords":"Am F", "repeats":2}] }'
+	 * localhost:8080/songs
 	 *
-	 * curl --header "Content-Type:application/json" --request POS	       * T --data '{"name":"ref", "chords":"A F", "repeats":1, "song         * ":{"id": 3}}' localhost:8080/parts
+	 *
+	 * curl --header "Content-Type:application/json" --request POST --data
+	 * '{"name":"ref", "chords":"A F", "repeats":1 , "song":{"id": 3}}'
+	 * localhost:8080/parts
 	 *
 	 */
 
