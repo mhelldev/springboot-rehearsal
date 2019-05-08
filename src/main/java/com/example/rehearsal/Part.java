@@ -22,7 +22,7 @@ public class Part {
 	public Song getSong() {
 		return this.song;
 	}
-	
+
 	@JsonProperty
 	public void setSong(Song song) {
 		this.song = song;

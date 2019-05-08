@@ -15,4 +15,3 @@ public class Song {
 	@OneToMany(mappedBy = "song", cascade = CascadeType.ALL)
 	private List<Part> parts;
 }
-

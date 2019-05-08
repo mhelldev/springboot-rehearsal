@@ -8,7 +8,7 @@ import java.util.*;
 
 @SpringBootApplication
 public class RehearsalApplication {
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(RehearsalApplication.class, args);
 	}
@@ -29,7 +29,7 @@ public class RehearsalApplication {
 			List<Part> parts = new ArrayList<>();
 			parts.add(part);
 			song.setParts(parts);
-			
+
 			repository.save(song);
 
 		};
