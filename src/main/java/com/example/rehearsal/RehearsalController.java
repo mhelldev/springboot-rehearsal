@@ -20,7 +20,12 @@ public class RehearsalController {
 	}
 
 	@PostMapping("/songs")
-	public void newSong(@RequestBody Song song) {
+	public void newSong(@RequestBody Song song) {	
+		if (song.getParts() != null) {
+			for(Part p : song.getParts()) {
+				p.setSong(song);
+			}
+		}	
 		songRepo.save(song);
 	}
 
