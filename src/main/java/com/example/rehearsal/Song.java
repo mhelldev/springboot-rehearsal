@@ -12,6 +12,5 @@ public class Song {
 	private Long id;
 	private String name;
 	private String description;
-	@OneToMany(mappedBy = "song", cascade = CascadeType.ALL)
-	private List<Part> parts;
+	private String parts;
 }

@@ -9,8 +9,6 @@ public class RehearsalController {
 
 	@Autowired
 	private SongRepository songRepo;
-	@Autowired
-	private PartRepository partRepo;
 
 	@GetMapping("/songs")
 	public List<Song> songs() {
@@ -20,33 +18,8 @@ public class RehearsalController {
 	}
 
 	@PostMapping("/songs")
-	public void newSong(@RequestBody Song song) {	
-		if (song.getParts() != null) {
-			for(Part p : song.getParts()) {
-				p.setSong(song);
-			}
-		}	
+	public void submitSong(@RequestBody Song song) {			 
 		songRepo.save(song);
 	}
-
-	@PostMapping("/parts")
-	public void newPart(@RequestBody Part part) {
-		partRepo.save(part);
-	}
-
-	/*
-	 * curl localhost:8080/songs
-	 *
-	 * curl --header "Content-Type:application/json" --request POST --data
-	 * '{"name":"Home", "description":"a song about home" ,
-	 * "parts":[{"name":"chorus", "chords":"Am F", "repeats":2}] }'
-	 * localhost:8080/songs
-	 *
-	 *
-	 * curl --header "Content-Type:application/json" --request POST --data
-	 * '{"name":"ref", "chords":"A F", "repeats":1 , "song":{"id": 3}}'
-	 * localhost:8080/parts
-	 *
-	 */
-
+ 
 }

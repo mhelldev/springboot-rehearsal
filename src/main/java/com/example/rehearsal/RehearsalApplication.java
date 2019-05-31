@@ -19,19 +19,8 @@ public class RehearsalApplication {
 			Song song = new Song();
 			song.setName("Black Swan");
 			song.setDescription("A song about a black swan");
-
-			Part part = new Part();
-			part.setName("Chorus");
-			part.setChords("Fm G Dm A7");
-			part.setRepeats(4);
-			part.setSong(song);
-
-			List<Part> parts = new ArrayList<>();
-			parts.add(part);
-			song.setParts(parts);
-
+			song.setParts("Am C Dm A7\n B Fm");
 			repository.save(song);
-
 		};
 	}
 
