@@ -19,7 +19,7 @@ public class RehearsalApplication {
 			Song song = new Song();
 			song.setName("Black Swan");
 			song.setDescription("A song about a black swan");
-			song.setParts("Am C Dm A7\n B Fm");
+			song.setParts("Am C Dm A7\nB Fm");
 			repository.save(song);
 		};
 	}
