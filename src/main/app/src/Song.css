@@ -1,0 +1,89 @@
+body{
+	background-color: black;
+	color: white;
+}
+.SongListHeader {
+	padding: 10px;
+}
+
+.SongList {
+	width: 100%;
+	float: left;
+}
+.Song {
+	float: left;
+	margin-top: 10px;
+	width: 90%;
+	padding: 10px;
+}
+
+.SongName {
+	border-bottom: 1px solid gray;
+	font-size: 1.4em;
+}
+
+.Description {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: gray;
+	font-size: 0.8em;
+}
+
+.Part {
+	float: left;
+	width: 100%;
+}
+
+.Repeats {
+	font-size: 1.4em;
+	padding: 15px;						
+}
+
+/*.Chorus > .Chord {
+	color: black;
+	background-color: #66FCF1;
+}
+
+.Refrain > .Chord {
+	color: black;
+	background-color: #45A29E;
+}*/
+
+.Chord {
+	color: black;
+	background-color: #66FCF1;
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.Formular {
+	float: left;
+	width: 90%;
+}
+
+.Label {
+	float: left;
+	width: 100%;
+}
+
+input {
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	border-radius: 0px;
+	border: none;
+}
+
+button {
+	float: left;
+	margin-top: 20px;
+	margin-right: 10px;
+	padding: 5px;
+	border: 2px solid #66FCF1;
+	background: black;
+	text-decoration: none;
+	color: white;
+}
